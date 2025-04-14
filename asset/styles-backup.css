@@ -1,0 +1,78 @@
+.tree ul {
+    padding-top: 20px;
+    position: relative;
+    display: flex;
+    justify-content: center;
+}
+
+.tree li {
+    list-style-type: none;
+    position: relative;
+    padding: 20px 5px 0 5px;
+    text-align: center;
+}
+
+/* Connector lines */
+.tree li::before,
+.tree li::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    width: 50%;
+    height: 20px;
+    border-top: 2px solid #ccc;
+}
+
+.tree li::before {
+    left: 0;
+    border-right: 2px solid #ccc;
+}
+
+.tree li::after {
+    right: 0;
+    border-left: 2px solid #ccc;
+}
+
+/* Remove lines from single child */
+.tree li:only-child::before,
+.tree li:only-child::after {
+    display: none;
+}
+
+/* Remove left line on first child */
+.tree li:first-child::before {
+    border: none;
+}
+
+/* Remove right line on last child */
+.tree li:last-child::after {
+    border: none;
+}
+
+/* Vertical line from parent to children */
+.tree ul::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 50%;
+    border-left: 2px solid #ccc;
+    height: 20px;
+}
+
+/* Person box */
+.person {
+    padding: 10px 15px;
+    display: inline-block;
+    background-color: #f0f8ff;
+    border: 2px solid #2e8b57;
+    border-radius: 10px;
+    font-family: sans-serif;
+    font-size: 14px;
+    color: #2e8b57;
+    transition: 0.3s ease-in-out;
+}
+
+.person:hover {
+    background-color: #d1f0d7;
+    transform: scale(1.05);
+}
